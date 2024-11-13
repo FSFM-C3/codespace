@@ -32,40 +32,40 @@ The following is the **recommended file structure**. The files in each directory
 
 ```bash
 datasets/pretrain/
-├── FaceForensics/  				  # FF++ 
-│   ├── dataset/			          # FF++ data partition
+├── FaceForensics/	# FF++ 
+│   ├── dataset/	# FF++ data partition
 │   │   └── splits/
 │   │       ├── train.json
 │   │       ├── val.json
 │   │       └── test.json
-│   ├── original_sequences/		          # FF++ real data
+│   ├── original_sequences/	# FF++ real data
 │   │   └── youtube/
-│   ├── manipulated_sequences/	                  # FF++ fake data
+│   ├── manipulated_sequences/	# FF++ fake data
 │   │   ├── DeepFakes/
 │   │   ├── Face2Face/
 │   │   ├── FaceSwap/
 │   │   └── NeuralTextures/
-│   └── face_dataset_split/			  # data after frame extraction (automatic creating)
+│   └── face_dataset_split/	# data after frame extraction (automatic creating)
 │
 ├── VGGFace2/
-│   ├── train/					  # raw data for training
-│   ├── test/					  # raw data for testing
-│   └── faces/					  # data after face extraction (train + test) (automatic creating)
+│   ├── train/	# raw data for training
+│   ├── test/	# raw data for testing
+│   └── faces/	# data after face extraction (train + test) (automatic creating)
 │
-├── pretrain_datasets/				  # data for pretraining (automatic creating)
-│   ├── FaceForensics_youtube/	                  # FF++ data for pretraining
-│   └── VGGFace2/			          # VGGFace2 data for pretraining
+├── pretrain_datasets/	# data for pretraining (automatic creating)
+│   ├── FaceForensics_youtube/	# FF++ data for pretraining
+│   └── VGGFace2/	# VGGFace2 data for pretraining
 │
 └── preprocess_dlib/
     ├── config/
     │   ├── __init__.py
-    │   └── default.py				  # define file structure
-    ├── tools/					  # toolkits for face parsing
-    │   ├── facer/				  # FACER toolkit
-    │   ├── shape_predictor_81_face_landmarks.dat # DLIB toolkit
+    │   └── default.py	# define file structure
+    ├── tools/	# toolkits for face parsing
+    │   ├── facer/	# FACER toolkit
+    │   ├── shape_predictor_81_face_landmarks.dat	# DLIB toolkit
     │   └── util.py
-    ├── dataset_preprocess.py		          # for frame extraction
-    └── face_parse.py				  # for face parsing
+    ├── dataset_preprocess.py	# for frame extraction
+    └── face_parse.py	# for face parsing
 ```
 ### Frame Extraction
 We use the full **VGGFace2 (VF2)** dataset for pre-training, alongside original YouTube videos (pristine faces) from **FaceForensics++ (FF++)**, i.e., FF++ original (FF++_o). The FF++_o includes 720 training and 140 validation videos. 
@@ -189,61 +189,61 @@ The following is the **recommended file structure**. The files in each directory
 
 ```bash
 datasets/downstream/
-├── Celeb-DF/  			                  # Celeb-DF (v1)
-│   ├── Celeb-real/ 				
-│   ├── YouTube-real/ 				
-│   ├── Celeb-synthesis/ 			
-│   └── face_dataset_split/			  # data after frame extraction (automatic creating)
+├── Celeb-DF/	# Celeb-DF (v1)
+│   ├── Celeb-real/
+│   ├── YouTube-real/
+│   ├── Celeb-synthesis/
+│   └── face_dataset_split/	# data after frame extraction (automatic creating)
 │
-├── Celeb-DF-v2/  				  # Celeb-DF (v2) 
-│   ├── Celeb-real/ 				
-│   ├── YouTube-real/ 				
-│   ├── Celeb-synthesis/ 			
-│   └── face_dataset_split/			  # data after frame extraction (automatic creating)
+├── Celeb-DF-v2/	# Celeb-DF (v2) 
+│   ├── Celeb-real/
+│   ├── YouTube-real/
+│   ├── Celeb-synthesis/
+│   └── face_dataset_split/	# data after frame extraction (automatic creating)
 │
-├── deepfake_in_the_wild/			  # deepfake in the wild
+├── deepfake_in_the_wild/	# deepfake in the wild
 │   ├── real_train/ 			
 │   ├── real_test/ 
 │   ├── fake_train/ 
 │   ├── fake_test/  
-│   └── face_dataset_split/			  # data after frame extraction (automatic creating)
+│   └── face_dataset_split/	# data after frame extraction (automatic creating)
 │
-├── DFDC/			                  # DeepFake Detection Challenge (Full)
+├── DFDC/# DeepFake Detection Challenge (Full)
 │   ├── test/  
-│   └── face_dataset_split/			  # data after frame extraction (automatic creating)
+│   └── face_dataset_split/	# data after frame extraction (automatic creating)
 │
-├── DFDCP/		                          # DeepFake Detection Challenge (Preview)
+├── DFDCP/	# DeepFake Detection Challenge (Preview)
 │   ├── dataset.json	
 │   ├── method_A/
 │   ├── method_B/
 │   ├── original_videos/
-│   └── face_dataset_split/                       # data after frame extraction (automatic creating)
+│   └── face_dataset_split/	# data after frame extraction (automatic creating)
 │
-├── FaceForensics/  				  # FF++ 
-│   ├── dataset/			          # FF++ data partition
+├── FaceForensics/	# FF++ 
+│   ├── dataset/	# FF++ data partition
 │   │   └── splits/ 
 │   │       ├── train.json
 │   │       ├── val.json
 │   │       └── test.json
-│   ├── original_sequences/			  # FF++ real data
+│   ├── original_sequences/	# FF++ real data
 │   │  	└── youtube/
-│   ├── manipulated_sequences/	                  # FF++ fake data
+│   ├── manipulated_sequences/	# FF++ fake data
 │   │   ├── DeepFakes/
 │   │   ├── Face2Face/
 │   │   ├── FaceSwap/
 │   │   └── NeuralTextures/
-│   └──face_dataset_split/			  # data after frame extraction (automatic creating)
+│   └──face_dataset_split/	# data after frame extraction (automatic creating)
 │
 └── preprocess_dlib/
     ├── config/
     │   ├── __init__.py
-    │   └── default.py				  # define file structure
-    ├── tools/					  # toolkits for face parsing
-    │   ├── facer/			          # FACER toolkit
-    │   ├── shape_predictor_81_face_landmarks.dat # DLIB toolkit
+    │   └── default.py	# define file structure
+    ├── tools/	# toolkits for face parsing
+    │   ├── facer/	# FACER toolkit
+    │   ├── shape_predictor_81_face_landmarks.dat	# DLIB toolkit
     │   └── util.py
-    ├── dataset_preprocess.py                     # for frame extraction
-    └── face_parse.py				  # for face parsing
+    ├── dataset_preprocess.py	# for frame extraction
+    └── face_parse.py	# for face parsing
 ```
 
 ### Frame Extraction
