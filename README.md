@@ -1,6 +1,5 @@
 # FSFM-C3
 This is the official code space for FSFM-C3. In this repository, we expose all the source code of the project and provide a detailed deployment explanation. 
-<!-- Please visit [this website](https://huggingface.co/spaces/FSFM-C3/Masking) for the **mask strategies demo** proposed in the paper. -->
 # Environment
 ```bash
 conda create -n fsfmc3 python=3.9
