@@ -122,7 +122,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 OMP_NUM_THREADS=1 python -m torch.distributed.launc
 ```
 # Downstream Tasks
 The pre-trained model is able to be fine-tuned on relevant datasets to perform different downstream tasks. In the following sections, we will introduce the implementation of model fine-tuning. 
-## Task 1: Deepfake Detection
+## Task 1: Deepfake Detection (DfD)
 To evaluate the generalizability of our method across diverse DfD scenarios, we follow the challenging cross-dataset setup. Specifically, we fine-tune one detector on the **FaceForensics++ (FF++, c23/HQversion)** dataset and test it on unseen datasets: CelebDF-v2 (CDFv2), Deepfake Detection Challenge (DFDC), Deepfake Detection Challenge preview (DFDCp), and Wild Deepfake(WDF).
 ### Dataset Preparation
 Download the following datasets that we utilized during the fine-tuning. The location of the datasets in the file directory is described in ***File Structure***.
@@ -224,7 +224,7 @@ CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=2 python -m torch.distributed.launch --np
     --nb_classes 2 \
     --batch_size 320
 ```
-## Task 2: DiFF Detection
+## Task 2: Diffusion Facial Forgery Detection
 To further investigate the adaptability of our method against emerging unknown facial forgeries, we adopt cross-distribution testing using the recently released **DiFF** benchmark. This dataset contains high-quality face images synthesized by SOTA diffusion models across four sub-sets: T2I (Text-to-Image), I2I (Image-to-Image), FS (Face Swapping), and FE (Face Editing). We train only on the **FF++_DeepFake (c23) subset**.
 ### Dataset Preparation
 Download the following datasets that we utilized during the fine-tuning. The location of the datasets in the file directory is described in ***File Structure***.
@@ -314,7 +314,7 @@ CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=2 python -m torch.distributed.launch --np
     --nb_classes 2 \
     --batch_size 256
 ```
-## Task 3: FAS Detection
+## Task 3: Face Anti-Spoofing (FAS)
 To evaluate the transferability of our method for FAS under significant domain shifts, we use four widely used benchmark datasets: **MSU-MFSD (M)**, **CASIA-FASD (C)**, **Idiap Replay-Attack (I)**, and **OULU-NPU (O)**. We treat each dataset as the target domain and apply the leave-one-out (LOO) cross-domain evaluation. 
 ### Dataset Preparation
 Follow [this work](https://github.com/Kartik-3004/hyp-oc) to download the datasets that we utilized in this task. 
