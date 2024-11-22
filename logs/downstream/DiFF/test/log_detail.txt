@@ -1,0 +1,79 @@
+| distributed init (rank 0): env://, gpu 0
+| distributed init (rank 1): env://, gpu 1
+[10:07:48.933786] job dir: /FSFM_C3
+[10:07:48.933964] Namespace(aa='rand-m9-mstd0.5-inc1',
+accum_iter=1,
+apply_simple_augment=True,
+batch_size=320,
+blr=0.001,
+clip_grad=None,
+color_jitter=None,
+cutmix=0,
+cutmix_minmax=None,
+data_path='/imagenet_full_size/061417/',
+device='cuda',
+dist_backend='nccl',
+dist_eval=False,
+dist_on_itp=False,
+dist_url='env://',
+distributed=True,
+drop_path=0.1,
+epochs=50,
+eval=True,
+finetune='',
+global_pool=True,
+gpu=0,
+input_size=224,
+layer_decay=0.75,
+local_rank=0,
+log_dir=PosixPath('/FSFM_C3/checkpoint/experiments_finetune/DiFF/750487/test_results_DiFF/2210277'),
+lr=None,
+min_lr=1e-06,
+mixup=0,
+mixup_mode='batch',
+mixup_prob=1.0,
+mixup_switch_prob=0.5,
+model='vit_base_patch16',
+nb_classes=2,
+normalize_from_IMN=True,
+num_workers=10,
+output_dir=PosixPath('/FSFM_C3/checkpoint/experiments_finetune/DiFF/750487/test_results_DiFF/2210277'),
+pin_mem=True,
+rank=0,
+recount=1,
+remode='pixel',
+reprob=0.25,
+resplit=False,
+resume='./checkpoint/experiments_finetune/DiFF/750487',
+seed=0,
+smoothing=0.1,
+start_epoch=0,
+warmup_epochs=5,
+weight_decay=0.05,
+world_size=2)
+[10:07:50.541682] criterion = LabelSmoothingCrossEntropy()
+[10:07:51.298201] Resume checkpoint ./checkpoint/experiments_finetune/DiFF/750487/checkpoint-min_val_loss_T2I.pth
+[10:07:51.491579] 
+
+--Metrics of the network testing on the T2I dataset with 43582 test imgs--
+[10:11:22.518238] *[------FRAME-LEVEL------] 
+Acc 50.243 Balanced_Acc 50.573 Auc 61.742 EER 0.408 loss 1.165
+[10:11:23.512257] Resume checkpoint ./checkpoint/experiments_finetune/DiFF/750487/checkpoint-min_val_loss_I2I.pth
+[10:11:23.698504] 
+
+--Metrics of the network testing on the I2I dataset with 35227 test imgs--
+[10:17:58.203305] *[------FRAME-LEVEL------] 
+Acc 38.842 Balanced_Acc 50.771 Auc 71.912 EER 0.326 loss 1.259
+[10:19:51.862457] Resume checkpoint ./checkpoint/experiments_finetune/DiFF/750487/checkpoint-min_val_loss_FS.pth
+[10:19:52.019263] 
+
+--Metrics of the network testing on the FS dataset with 28133 test imgs--
+[10:26:48.171864] *[------FRAME-LEVEL------] 
+Acc 23.531 Balanced_Acc 50.646 Auc 71.306 EER 0.327 loss 1.556
+[10:27:24.917479] Resume checkpoint ./checkpoint/experiments_finetune/DiFF/750487/checkpoint-min_val_loss_FE.pth
+[10:27:25.160284] 
+
+--Metrics of the network testing on the FE dataset with 37484 test imgs--
+[10:32:28.250524] *[------FRAME-LEVEL------] 
+Acc 42.562 Balanced_Acc 50.864 Auc 78.981 EER 0.271 loss 1.185
+[10:32:28.256576] Testing time 0:24:37
